@@ -1,0 +1,110 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side">
+
+    <div class="div-logo">
+      <img class="img-logo"
+           [src]="appConfig.getAppLogo()"/>
+    </div>
+    <mat-card class="card-menu-button">
+      <mat-card-content>
+        <p>{{ appConfig.getAppOwner() }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" *ngIf="isUserAdmin()" (click)="onDashboard()">
+      <mat-card-content>
+        <p>Dashboard</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onLogOut()">
+      <mat-card-content>
+        <p>Logout</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="drawer-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ appConfig.getAppName() }}</span>
+      <span class="example-spacer"></span>
+      <app-cart-button></app-cart-button>
+    </mat-toolbar>
+
+    <img class="img-banner"
+         src="https://imgs.search.brave.com/yNaCcmE2pDYqPhh4-3_wF4iyqqthSPpm_3g744ASrrk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQ4/ODQ1MzI0OS9waG90/by9tYWtlLXVwLXRh/YmxlLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz0yUjkyaWxU/WE5SaFF3NkRETHBr/Qkwzdi1SMm5rMFF0/QkYzWDlpQTRMRVFN/PQ"/>
+    <img class="img-banner"
+         src="https://imgs.search.brave.com/IQILqptKr8TaWzk5U_XOM38kpJgziYzeMUD6EowdL6k/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0Lzg2LzQ4LzE2/LzM2MF9GXzQ4NjQ4/MTYxMF9zckZIZXNa/enZJaUNSUzFEMjc3/Zmo2UTdueEc5eGt3/RC5qcGc"/>
+    <img class="img-banner"
+         src="https://imgs.search.brave.com/bSp6vSFcSACw4oZ30mDijPSVH3kie5WS2q-tuF0x_gc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzMzLzAwLzk4/LzM2MF9GXzMzMzAw/OTg2NV9uM0ZaZ2ZZ/SFdSQ1JZM29xeWxs/ZlRVSkNZY3ZtbnFK/US5qcGc"/>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Welcome to {{ appConfig.getAppName() }}</mat-card-title>
+      <mat-card-content>
+
+        <div class="div-text">
+          <p>
+            Discover Elegance and Innovation with Our Japanese Makeup Collection
+            Welcome to Geisha Beauty, your ultimate destination for authentic Japanese makeup.
+            Embrace the beauty secrets of Japan with our exclusive range of premium cosmetics, meticulously curated to
+            bring you the best of Japanese beauty (J-Beauty).
+
+            Our collection features genuine products sourced directly from renowned Japanese brands, ensuring you
+            experience the highest quality and authenticity.
+
+            Experience the aesthetic appeal of Japanese packaging. Our products not only deliver exceptional performance
+            but also come in beautifully designed, minimalist packaging that reflects the elegance of Japanese culture.
+
+            We are also committed to offering products that are cruelty-free and eco-conscious. Enjoy peace of mind knowing
+            that your beauty routine supports ethical and sustainable practices.
+            <br><br>
+            Stay connected with us for the latest in Japanese beauty trends, exclusive offers, and expert tips.
+            Indulge in the elegance and sophistication of Japanese makeup at Geisha Beauty. Elevate your beauty routine
+            with products that embody the precision, innovation, and artistry of Japan. Shop now and discover the
+            secrets to timeless beauty!
+          </p>
+          <img class="img-section"
+               src="https://imgs.search.brave.com/WUXvxhHr5aq0Q9-5OGpnNnqeUuj489jJVjXi_AS297A/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9qdy13/ZWJtYWdhemluZS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjQvMDEvZHJ1Z3N0/b3JlLWxpcHN0aWNr/LmpwZw"/>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Impeccable Service</mat-card-title>
+      <mat-card-content>
+        <div class="div-text">
+          <img class="img-section" style="margin-left: 0px !important; margin-right: 16px"
+               src="https://imgs.search.brave.com/OsHCWC6uVEsiATd1fB5w9dEsRrHVhWJwMGaMzRZKhF8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2U0L2I4/LzFjL2U0YjgxY2Ux/MzdkNmE0MDkyYjUz/MDA0ZjMzN2E4Mjhl/LmpwZw">
+
+          <p>
+            Safe and Fast Delivery Guaranteed at Geisha Beauty, we understand that timely and secure delivery is crucial for your shopping experience.
+            That’s why we prioritize both speed and safety in every order we handle.
+            <br><br>
+            Fast Delivery:
+
+            Efficient Shipping: We partner with top-tier shipping services to ensure your order arrives as quickly as
+            possible.
+            Prompt Processing: Orders are processed promptly, ensuring minimal wait time from the moment you place your
+            order to the moment it ships.
+
+            Responsive Service: Our customer support team is available to address any concerns or questions you may have
+            regarding your delivery.
+            Satisfaction Guaranteed: We are committed to ensuring your complete satisfaction with your purchase and
+            delivery experience.
+
+            <br><br>
+            Shop with confidence at Geisha Beauty, knowing that your order is in good hands from the moment it leaves our
+            warehouse until it arrives at your doorstep.
+
+          </p>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+    <app-list-products [isAdmin]="false"></app-list-products>
+  </div>
+
+</mat-drawer-container>
+
